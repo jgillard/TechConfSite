@@ -1,0 +1,22 @@
+$swatch-name: "white-pink";
+
+// Swatch colors - modify them to create your own swatch
+$text-color: #D3145A;                // text color
+$header-color: #32323b;              // Header color
+$small-color: #D3145A;               // Small color
+$icon-color: #D3145A;                // Icon color
+ 
+$link-color: #D3145A;                // Link color
+$link-color-hover: #D3145A;          // Link color hover
+$link-color-active: #D3145A;         // Link color active
+$link-header: #D3145A;               // Link header color
+ 
+$background: white;                // Background color
+$background-reverse: #D3145A;        // Background reverse
+$overlay: rgba(0,0,0,.07);           // Overlay color
+ 
+$form-background: #EE79A9;        // Form background color
+$form-color: white;                // Form text color
+$form-active: white;               // Form active
+$primary-button-background: white; // Primary button background
+$primary-button-text: white;       // Primary button text

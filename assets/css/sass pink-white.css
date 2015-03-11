@@ -1,0 +1,24 @@
+$swatch-name: "pink-white";
+
+// Swatch colors - modify them to create your own swatch
+$text-color: white;                // text color
+$header-color: white;              // Header color
+$small-color: white;               // Small color
+$icon-color: white;                // Icon color
+ 
+$link-color: white;                // Link color
+$link-color-hover: white;          // Link color hover
+$link-color-active: white;         // Link color active
+$link-header: white;               // Link header color
+ 
+$background: #D3145A;                // Background color
+$background-reverse: white;        // Background reverse
+$overlay: rgba(0,0,0,.07);           // Overlay color
+ 
+$form-background: #D3145A;           // Form background color
+$form-color: #D3145A;                // Form text color
+$form-active: #D3145A;               // Form active
+$primary-button-background: #32323b; // Primary button background
+$primary-button-text: white;       // Primary button text
+
+http://sassmeister.com/gist/e848c65730d925b8b408

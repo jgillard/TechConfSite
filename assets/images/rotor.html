@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Wind Turbine Rotor</title>
+<style type="text/css"> <!--
+  h1,h2  { font-family: arial,helvetica; font: 14pt }
+  p      { font-family: arial,helvetica; font: 12pt }
+  --> </style>
+</head>
+<body bgcolor="white">
+
+<script language="JavaScript"><!--
+  function openFig() {
+     w=window.open("","Figure","width=440,height=450") 
+     w.document.write("<head><title>Wind Turbine Rotor</title></head>")
+     w.document.write('<body bgcolor=white><img src="/img/ceoRotor.gif"></body>')
+     w.document.close();
+  }
+//--></script>
+
+<center><table width=700><tr><td>
+<p>
+
+<h2 align=center>Wind Turbine Rotor Model after Glauert</h2>
+<p>
+This program is to be used in ES4E0 Renewable Energy (Wind) in the second part of the assignment, to study the behaviour of a wind turbine rotor.
+<a href="JavaScript: openFig()" onMouseOver="window.status='Rotor'; 
+ return true" onMouseOut="window.status=''; return true">See diagram</a>.
+<p>
+
+The program tries (badly) to account for the effects of blade number (this makes little difference) and for the effect of blade tips. Use it to try to understand how a rotor behaves with varying wind strength, how rotors with twisted blades or constant pitch blades work, and perhaps even how stall control limits torque at high windspeed. Maybe investigate pitch and chord variations, or variations in rotor speed and windspeed. To keep things simple the program linearly interpolates between the values of chord and pitch at the tip and the root. NB the program works in SI units, ie radians, rads/s, Newtons and Newton.metres etc  only.
+<p>
+Results are in the form of a table for just one rotor condition (ie rotational speed and windspeed) with the blade radial station in metres across the top and fifteen or so  other parameters of interest in rows below them, including blade angle of attack alpha, lift and drag coefficients and thrust and torque increments - <i>deltaF</i> and <i>deltaQ</i> - which if summed give the total thrust and torque for the rotor. The terms <i>pranf</i>, <i>pranh</i> and <i>pranF</i> are concerned with the hub and tip losses and are probably not especially interesting. The axial and tangential interference factors 'ax' and 'at' (called a and a' in lectures) are also shown.
+<p>
+The program is iterative and attempts (usually successfully) to adjust the axial and tangential interference factors to achieve a consistent solution to momentum equations. If it does not succeed then try a slightly different input condition - it may not succeed at all in heavily loaded rotor conditions. I have used a Newton-Raphson method to avoid having to solve the equations explicitly (which might be impossible anyway).
+
+<p>
+Please enter values for the following nine parameters (or leave the defaults):
+<form action="/cgi-bin/rotor" method="post">
+<center><table cellpadding=3>
+<tr><td align=right><b>Number of blades</td>
+    <td><input name="BLADES" size="2" maxlength="3" value="3"></td></tr>
+<tr><td align=right><b>Maximum radius of rotor</b> [m]</td>
+    <td><input name="MAXRAD" size="7" maxlength="16" value="15"></td></tr>
+<tr><td align=right><b>Minimum radius of rotor</b> [m]</td>
+    <td><input name="MINRAD" size="7" maxlength="16" value="1.5"></td></tr>
+<tr><td align=right><b>Blade chord at root</b> [m]</td>
+    <td><input name="CHORDROOT" size="7" maxlength="16" value="1.5"></td></tr>
+<tr><td align=right><b>Blade chord at tip</b> [m]</td>
+    <td><input name="CHORDTIP" size="7" maxlength="16" value="0.5"></td></tr>
+<tr><td align=right><b>Blade pitch at root</b> [rads]</td>
+    <td><input name="PITCHROOT" size="7" maxlength="16" value="0.2"></td></tr>
+<tr><td align=right><b>Blade pitch at tip</b> [rads]</td>
+    <td><input name="PITCHTIP" size="7" maxlength="16" value="0.05"></td></tr>
+<tr><td align=right><b>Wind speed</b> [m/s]</td>
+    <td><input name="WINF" size="7" maxlength="16" value="5"></td></tr>
+<tr><td align=right><b>Rotor rotational speed</b> [rads/sec]</td>
+    <td><input name="OMEGA" size="7" maxlength="16" value="3.142"></td></tr>
+</table>
+<p>
+<input type="SUBMIT" name="RUN" value="RUN MODEL">
+</center>
+</form>
+
+</td></tr></table></center>
+</body>
+</html>
